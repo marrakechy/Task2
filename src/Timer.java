@@ -18,6 +18,19 @@ public class Timer {
         this.seconds = seconds;
     }
 
+    public int getHours() {
+
+        return hours;
+    }
+
+    public int getMinutes() {
+        return minutes;
+    }
+
+    public int getSeconds() {
+
+        return seconds;
+    }
 
     public void addTime(int seconds) {
         if(seconds < 0)
