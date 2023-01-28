@@ -19,6 +19,7 @@ public class Timer {
     }
 
     public int getHours() {
+
         return hours;
     }
 
@@ -27,9 +28,48 @@ public class Timer {
     }
 
     public int getSeconds() {
+
         return seconds;
     }
 
+    public void addTime(int seconds) {
+        if(seconds < 0)
+        {
+            throw new IllegalArgumentException("Seconds should be positive");
+        }
+        this.seconds += seconds;
+        if(this.seconds >= 60){
+            this.seconds -= 60;
+            this.minutes++;
+
+            if(this.minutes >= 60){
+                this.minutes -= 60;
+                this.hours++;
+            }
+        }
+    }
+
+    public void tick() {
+        if(this.hours == 0 && this.minutes == 0 && this.seconds == 0) {
+            System.out.println("beep");
+        }
+
+        else {
+            this.seconds--;
+
+            if(this.seconds < 0) {
+                this.seconds = 59;
+                this.minutes--;
+
+                if(this.minutes < 0) {
+                    this.minutes = 59;
+                    this.hours--;
+                }}}
+    }
+
+    public String toString() {
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+    }
 
 
 
