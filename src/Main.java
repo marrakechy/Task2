@@ -2,16 +2,15 @@
 
 public class Main {
     public static void main(String[] args) {
-        Timer timer = new Timer(1, 30, 45);
+        Timer convert = new Timer(0,120,3600);
+        System.out.println(convert);
 
-        System.out.println(timer);
+        convert.tick();
 
-        timer.tick();
+        System.out.println(convert);
 
-        System.out.println(timer);
+        convert.addTime(30);
 
-        timer.addTime(30);
-
-        System.out.println(timer);
+        System.out.println(convert);
     }
 }
